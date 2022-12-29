@@ -258,46 +258,39 @@
                 <div class="d-flex justify-content-center">
                     <table class="table   table-hover"  style="background-color: white; width: 96%">
                         <thead class="thead-light" style="color:#fff; background-color:#08090A">
+                        <tr>
+                            <th>Numéro</th>  <th>nom</th>  <th>ville</th>  <th>Localisation</th>  <th>disponibilité</th> <th colspan="3" class="text-center border-start"> Actions</th>
 
-                <tr>
-                    <th>id_propriete</th>
-                    <th>nom_propriete</th>
-                    <th>Image</th>
-                   <th>Localisation</th>
-                    <th>Prix</th>
-                    <th>date_ajout</th>
-                    <th colspan="3" class="text-center border-start"> Actions</th>
-                </tr>
-                </thead>
-                <tbody th:with="count=0">
-                <tr th:each = "propriete, hh : ${propriete}">
-                    <td th:text="${propriete.id}"></td>
-                    <td th:text="${propriete.name}"></td>
-                    <td><img th:src="@{${'/image/display/'+ propriete.id}}"
-                             class="card img-fluid" style="width:300px;height: 100px" alt=""/></td>
-                    <td th:text="${propriete.localisation}"></td>
-                    <td th:text="${propriete.prix}"></td>
-                    <td th:text="${#dates.format({propriete.createDate}, 'dd-MM-yyyy')}"/></td>
-                    <td style="width: 201px"  >
-                        <button style="position:relative; left: 100px; background-color: green; border: none" th:title="Visualiser"><a class="text-white"  th:href="@{/image/imageDetails(id=${propriete.id})}" >
-                            <img  src="../../static/images/view.png" th:src="@{/images/view.png}"
-                                  width="25px" height="32px"></a>
-                        </button></td>
-                    <td style="width: 201px"  >
-                        <button class="btn-primary p-0 " style="position:relative; left: 100px" th:title="Editer"><a class="text-white"  th:href="@{/update(id=${propriete.id})}" >
-                            <img  src="../../static/images/pencil.png" th:src="@{/images/pencil.png}"
-                                  width="29px" height="30px"></a>
-                        </button></td>
-                    <td style="width: 201px" ><button class="btn-danger p-0 "  style="position:relative; left: 50px"><a class="text-white" th:title="Supprimer"  th:href="@{/delete(id=${propriete.id})}">
-                        <img  style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(50deg) brightness(112%) contrast(112%);" src="../../static/images/trash.png" th:src="@{/images/trash.png}"  width="29px" height="30px">
-                    </a></button></td>
-                    </a></button>
-                    </td>
-                </tr>
-                </tbody>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="p:${proprieteList}">
+
+                                <td th:text="${p.id_propriete}" >Numéro/td>
+                                <td th:text="${p.name}" >nom</td>
+                                <td th:text="${p.ville}">ville</td>
+                                <td th:text="${p.localisation}">Localisation</td>
+                                <td th:text="${p.disponible}">disponibilité</td>
+
+                                <td><button class="btn1"><a class="text-white" th:href="@{/AjouterImage(id=${p.id_propriete})}" href="AjouterImage.html" >Photo</a></button></td>
+
+
+                                <td style="width: 201px"  ><button class="btn-primary p-0 " style="position:relative; left: 100px" th:title="Editer"><a class="text-white" th:href="@{update(id=${p.id_propriete})}" >
+                                    <img  src="../../static/images/pencil.png" th:src="@{/images/pencil.png}"
+                                          width="29px" height="30px"></a></button></td>
+                                <td style="width: 201px" ><button class="btn-danger p-0 "  style="position:relative; left: 50px"><a class="text-white" th:title="Supprimer " th:href="@{delete(id=${p.id_propriete})}"">
+                                    <img  style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(50deg) brightness(112%) contrast(112%);" src="../../static/images/trash.png" th:src="@{/images/trash.png}"  width="29px" height="30px">
+                                </a></button></td>
+                            </tr>
+
+
+                        </tbody>
+                <tfoot>
+                </tfoot>
             </table>
         </div>
     </div>
 </div>
 
 </body>
+</html>

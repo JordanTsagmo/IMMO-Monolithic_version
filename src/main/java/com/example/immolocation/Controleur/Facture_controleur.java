@@ -140,6 +140,9 @@ public class Facture_controleur {
         return "Bailleur/GestionLocataire";
     }
 
+        @GetMapping("/locataire/historique/{id}")
+        public String Historique(@PathVariable ("id") Long id, Model model ){
 
-
+        return "Bailleur/Historique_Facturation";
+    }
 }

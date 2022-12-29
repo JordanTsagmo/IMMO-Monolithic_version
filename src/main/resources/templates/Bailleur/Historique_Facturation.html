@@ -33,7 +33,7 @@
                             <h3>Salut Mr</h3>
                         </div>
                         <div  class="col-6 ">
-                            <h3 style="padding-left: 3px" th:text="${bailleur.nom_bailleur}"></h3>
+                           <!-- <h3 style="padding-left: 3px" th:text="${bailleur.nom_bailleur}"></h3> -->
                         </div>
 
                     </div>
@@ -170,7 +170,7 @@
                                 <ul class="nav nav-tabs">
                                     <ul class="nav flex-column flex-xs-row">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../Bailleur/Facturer.html" th:href="@{/home}">
+                                            <a class="nav-link" href="../Bailleur/Facturer.html" th:href="@{home}">
                                                 <span  class="elmenu"><h4 ><b>logout</b> </h4></span>
                                             </a>
                                         </li>
@@ -258,46 +258,26 @@
                 <div class="d-flex justify-content-center">
                     <table class="table   table-hover"  style="background-color: white; width: 96%">
                         <thead class="thead-light" style="color:#fff; background-color:#08090A">
+                        <tr>
 
-                <tr>
-                    <th>id_propriete</th>
-                    <th>nom_propriete</th>
-                    <th>Image</th>
-                   <th>Localisation</th>
-                    <th>Prix</th>
-                    <th>date_ajout</th>
-                    <th colspan="3" class="text-center border-start"> Actions</th>
-                </tr>
-                </thead>
-                <tbody th:with="count=0">
-                <tr th:each = "propriete, hh : ${propriete}">
-                    <td th:text="${propriete.id}"></td>
-                    <td th:text="${propriete.name}"></td>
-                    <td><img th:src="@{${'/image/display/'+ propriete.id}}"
-                             class="card img-fluid" style="width:300px;height: 100px" alt=""/></td>
-                    <td th:text="${propriete.localisation}"></td>
-                    <td th:text="${propriete.prix}"></td>
-                    <td th:text="${#dates.format({propriete.createDate}, 'dd-MM-yyyy')}"/></td>
-                    <td style="width: 201px"  >
-                        <button style="position:relative; left: 100px; background-color: green; border: none" th:title="Visualiser"><a class="text-white"  th:href="@{/image/imageDetails(id=${propriete.id})}" >
-                            <img  src="../../static/images/view.png" th:src="@{/images/view.png}"
-                                  width="25px" height="32px"></a>
-                        </button></td>
-                    <td style="width: 201px"  >
-                        <button class="btn-primary p-0 " style="position:relative; left: 100px" th:title="Editer"><a class="text-white"  th:href="@{/update(id=${propriete.id})}" >
-                            <img  src="../../static/images/pencil.png" th:src="@{/images/pencil.png}"
-                                  width="29px" height="30px"></a>
-                        </button></td>
-                    <td style="width: 201px" ><button class="btn-danger p-0 "  style="position:relative; left: 50px"><a class="text-white" th:title="Supprimer"  th:href="@{/delete(id=${propriete.id})}">
-                        <img  style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(50deg) brightness(112%) contrast(112%);" src="../../static/images/trash.png" th:src="@{/images/trash.png}"  width="29px" height="30px">
-                    </a></button></td>
-                    </a></button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                            <th>Numéro de facturation</th>
+                            <th>date de facturations</th>
+                            <th>Montant</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr >
+                            <td>numeber</td>
+                            <td >date</td>
+                            <td >Montant</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
 </body>
+</html>

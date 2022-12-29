@@ -48,11 +48,12 @@
                                <h4 >Gérer les propriétés:</h4>
                             </div>
                         </div>
+
                         <ul class="nav nav-tabs">
                             <ul class="nav flex-column flex-xs-row">
                                 <li class="nav-item">
                                     <a class="nav-link" th:href="@{/AjouterPropriete}">
-                                        <span  class="elmenu">Ajouter Propriété(s)</span>
+                                        <span  class="elmenu"> Ajouter Propriété(s)</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -235,11 +236,11 @@
           <div>
                     <div style=" height:7em;">
 
-                            <input type="text" placeholder=" Rechercher..." style=" border:none; border-radius:140px; position:relative; left:45em ; top:3em; height:3em; width:16em">
+                            <input type="text" placeholder=" Rechercher..." class="shadow-sm" style=" border:none; border-radius:140px; position:relative; left:45em ; top:3em; height:3em; width:16em">
                             <button  style="position:relative; left:45em ; top:3em; height:3em; width:3em"  class="bg-transparent border-0"><img src="../../static/images/searching.png" th:src="@{/images/searching.png}"
                                                                                                                   width="47px" height="43px"></button>
                         <label style="position:relative; left:49em ; top:3em; height:3em; " >afficher sur:</label>
-                            <select style="position:relative; left:50em ; top:3em; height:2em; "  >
+                            <select  style="position:relative; left:50em ;border-radius: 5px ; top:3em; height:2em; width: 4em"  >
 
                                 <option>25</option>
                                 <option>50</option>
@@ -254,38 +255,39 @@
                                                                                                                                              width="39px" height="33px"></button>
 
                     </div>
-              <table class="table   table-hover" style="background-color: white">
-                <thead class="thead-light" style="color:#fff; background-color:#08090A">
-                <tr>
-                    <th>Nom</th>  <th>Num CNI</th>  <th>Contact</th>  <th>Profession</th>  <th>Montant loyé</th> <th>Date</th><th colspan="2" class="text-center border-start"> Actions</th>
+              <div class="d-flex justify-content-center">
+                      <table class="table   table-hover"  style="background-color: white; width: 96%">
+                        <thead class="thead-light" style="color:#fff; background-color:#08090A">
+                        <tr>
+                            <th>Nom</th>  <th>Num CNI</th>  <th>Contact</th>  <th>Profession</th>  <th>Montant loyé</th> <th>Date</th><th colspan="2" class="text-center border-start"> Actions</th>
 
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="l:${locataireList}">
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="l:${locataireList}">
 
-                    <td th:text="${l.nom_Locataire}" ></td>
-                    <td th:text="${l.Numero_cni}"></td>
-                    <td th:text="${l.contact}"></td>
-                    <td th:text="${l.profession}"></td>
-                    <td th:text="${l.montant_mensuel_a_payer}" ></td>
-                    <td th:text="${l.date_entree_locataire}" ></td>
-                    <td style="width: 201px"  ><button class="btn-primary p-0 " style="position:relative; left: 100px" th:title="Editer"><a class="text-white" th:href="@{updateLocataire(id=${l.id})}" >
-                        <img  src="../../static/images/pencil.png" th:src="@{/images/pencil.png}"
-                              width="29px" height="30px"></a></button></td>
-                    <td style="width: 201px" ><button class="btn-danger p-0 "  style="position:relative; left: 50px"><a class="text-white" th:title="Supprimer " th:href="@{deleteLocataire(id=${l.id})}">
-                        <img  style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(50deg) brightness(112%) contrast(112%);" src="../../static/images/trash.png" th:src="@{/images/trash.png}"  width="29px" height="30px">
-                    </a></button></td>
-
-
-                </tr>
-
-                </tbody>
-                <tfoot>
-                </tfoot>
-            </table>
+                            <td th:text="${l.nom_Locataire}" ></td>
+                            <td th:text="${l.Numero_cni}"></td>
+                            <td th:text="${l.contact}"></td>
+                            <td th:text="${l.profession}"></td>
+                            <td th:text="${l.montant_mensuel_a_payer}" ></td>
+                            <td th:text="${l.date_entree_locataire}" ></td>
+                            <td style="width: 201px"  ><button class="btn-primary p-0 " style="position:relative; left: 100px" th:title="Editer"><a class="text-white" th:href="@{updateLocataire(id=${l.id})}" >
+                                <img  src="../../static/images/pencil.png" th:src="@{/images/pencil.png}"
+                                      width="29px" height="30px"></a></button></td>
+                            <td style="width: 201px" ><button class="btn-danger p-0 "  style="position:relative; left: 50px"><a class="text-white" th:title="Supprimer " th:href="@{deleteLocataire(id=${l.id})}">
+                                <img  style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(50deg) brightness(112%) contrast(112%);" src="../../static/images/trash.png" th:src="@{/images/trash.png}"  width="29px" height="30px">
+                            </a></button></td>
 
 
+                        </tr>
+
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+
+              </div>
 
           </div>
         </div>
