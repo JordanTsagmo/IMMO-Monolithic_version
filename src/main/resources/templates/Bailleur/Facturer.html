@@ -273,11 +273,11 @@
 								<td th:text="${locataire.Numero_cni}" >cni</td>
 								<td th:text="${locataire.montant_mensuel_a_payer}" >montant</td>
 								<td th:text="${locataire.date_entree_locataire}" >date</td>
-								<td class="text-center" style="width:17em"><button class="text-white" title="facturer" th:href="@{'/locataire/facturer/'+${locataire.login} }" > <img src="../../static/images/billing.png" th:src="@{/images/billing.png}"
-																																								   width="47px" height="43px"></button></boutton></td>
+								<td class="text-center" style="width:17em"><a class="text-white" title="facturer" href="fac_loc.html" th:href="@{'/locataire/facturer/'+${locataire.login} }" > <img src="../../static/images/billing.png" th:src="@{/images/billing.png}"
+																																								   width="47px" height="43px"></boutton></td>
 
-								<td class="text-center" style="width:17em" ><button class="text-white" title="historique facturation" th:href="@{'/locataire/historique/'+${locataire.id} }" ><img src="../../static/images/histo.png" th:src="@{/images/histo.png}"
-																																				   width="47px" height="43px"></button></button></boutton></td>
+								<td class="text-center" style="width:17em" ><a class="text-white" title="historique facturation" href="Historique_Facturation.html" th:href="@{'/locataire/historique/'+${locataire.id} }" ><img src="../../static/images/histo.png" th:src="@{/images/histo.png}"
+																																				   width="47px" height="43px"></boutton></td>
 							</tr>
 						</tbody>
 					</table>
