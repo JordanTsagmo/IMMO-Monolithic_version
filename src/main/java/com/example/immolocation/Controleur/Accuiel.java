@@ -41,8 +41,7 @@ public class Accuiel {
 
     @GetMapping("/Bailleur/AuthentificationBailleur")
     public String pageBailleur() {
-        return
-                "redirect:/GestionProprietes";
+        return "redirect:/GestionProprietes";
     }
 
     @GetMapping("/login-error")
